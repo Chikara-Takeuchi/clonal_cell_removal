@@ -1,0 +1,29 @@
+Filtering clonal cells
+--- Input Data ---
+Input H5AD file: /project/shared/gcrb_igvf/data/shared/TF_Perturbseq_full_neurons/H5AD/V0_TF_Perturbseq_full_neurons_sgRNACells_filtered_w_embedding_all.h5ad
+sgRNA file: /project/GCRB/Hon_lab/s215194/Single_Cell/TF_perturbseq_full_neurons/all_lanes_combined/aggr_dataframe/aggr_combined_df_full.pkl
+
+--- Output Settings ---
+Output folder: ./
+Generate top 50 clonal info: True
+Top 50 clonal info filename: top50_clones.csv
+Generate Gini index table: True
+Gini index table filename: gini_index_analysis.csv
+Output transcriptome H5AD: True
+Output transcriptome filename: clonal_cell_removal_transcriptome.h5ad
+Loading h5ad
+Loading gRNA df
+
+--- Processing gRNA dictionary (Fully Optimized Version) ---
+Loading sgRNA file '/project/GCRB/Hon_lab/s215194/Single_Cell/TF_perturbseq_full_neurons/all_lanes_combined/aggr_dataframe/aggr_combined_df_full.pkl'...
+Filtering by cells (columns) present in input data...
+Converting filtered data to sparse matrix (COO format)...
+Releasing dense sgRNA data from memory.
+Creating gRNA dictionary from sparse matrix...
+gRNA dictionary creation complete. Found 12509 types of gRNAs.
+
+--- Processing finished ---
+Number of cells before filtering: 815498
+Number of clones: 495232
+Number of cells after filtering: (1 cell per clone): 596870
+All steps completed successfully.

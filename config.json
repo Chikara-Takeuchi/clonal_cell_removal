@@ -1,0 +1,15 @@
+{
+    "input_data":{
+        "input_file":"/project/shared/gcrb_igvf/data/shared/TF_Perturbseq_full_neurons/H5AD/V0_TF_Perturbseq_full_neurons_sgRNACells_filtered_w_embedding_all.h5ad",
+        "sgRNA_file":"/project/GCRB/Hon_lab/s215194/Single_Cell/TF_perturbseq_full_neurons/all_lanes_combined/aggr_dataframe/aggr_combined_df_full.pkl"
+    },
+    "output_file":{
+        "output_folder":"./pipeline_output",
+        "top50_clonal_info":true,
+        "top50_clonal_info_filename": "top50_clones.csv",
+        "gini_index_table": true,
+        "gini_index_table_filename": "gini_index_analysis.csv",
+        "output_transcriptome_h5ad": true,
+        "output_transcriptome_h5ad_filename": "clonal_cell_removal_transcriptome.h5ad"
+    }
+}
