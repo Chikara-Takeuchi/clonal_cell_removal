@@ -116,13 +116,15 @@ try:
     # Extract data from the 'output_file' section
     output_config = config_data.get('output_file', {})
     
-    output_folder = output_config.get('output_folder',"./")
+    output_folder = output_config.get('output_folder',"./pipeline_output")
     top50_clonal_info = output_config.get('top50_clonal_info',True)
     top50_clonal_info_filename = output_config.get('top50_clonal_info_filename',"top50_clones.csv")
     gini_index_table = output_config.get('gini_index_table',True)
     gini_index_table_filename = output_config.get('gini_index_table_filename',"gini_index_analysis.csv")
     output_transcriptome_h5ad = output_config.get('output_transcriptome_h5ad',True)
     output_transcriptome_h5ad_filename = output_config.get('output_transcriptome_h5ad_filename',"clonal_cell_removal_transcriptome.h5ad")
+    
+    os.makedirs(output_folder, exist_ok=True)
     
     # --- Print the variables to verify ---
     print("--- Input Data ---")
@@ -142,7 +144,7 @@ except FileNotFoundError:
     print(f"Error: The file '{config_filepath}' was not found.")
 except json.JSONDecodeError:
     print(f"Error: Could not decode JSON from the file '{config_filepath}'.")
-    
+
 ### Main functions
 print("Loading h5ad")
 adata = sc.read_h5ad(input_file)
